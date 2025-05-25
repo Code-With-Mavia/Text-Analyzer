@@ -22,3 +22,27 @@ TextUtils Pro is a Django web app for analyzing and modifying text. It can remov
 
 **Run the server**
 🔹python manage.py runserver
+
+# Directory Structure 
+textutils
+    │   db.sqlite3
+    │   manage.py
+    │
+    ├───frontend
+    │       analyze.html
+    │       index.html
+    │
+    └───textutils
+        │   asgi.py
+        │   settings.py
+        │   urls.py
+        │   views.py
+        │   wsgi.py
+        │   __init__.py
+        │
+        └───__pycache__
+                settings.cpython-313.pyc
+                urls.cpython-313.pyc
+                views.cpython-313.pyc
+                wsgi.cpython-313.pyc
+                __init__.cpython-313.pyc
