@@ -1,48 +1,65 @@
-# Text-Analyzer
-TextUtils Pro is a Django web app for analyzing and modifying text. It can remove punctuation, convert case, eliminate extra spaces and newlines, and count characters and sentences. Built with Django 5 and Bootstrap 5 for a clean, responsive UI.
+# 📝 TextUtils Pro
 
-**Features**
-🔹 Remove Punctuation
-🔹 Convert to Uppercase / Lowercase
-🔹 Remove New Lines
-🔹 Remove Extra Spaces
-🔹 Character Count
-🔹 Sentence Count
+**TextUtils Pro** is a Django-based web application for analyzing and modifying text. It offers features like punctuation removal, case conversion, extra space and newline removal, and character/sentence counting — all wrapped in a clean Bootstrap UI.
 
-**Tech Stack**
-🔹Python 3.13
-🔹Django 5.2
-🔹Bootstrap 5
-🔹HTML/CSS
+---
 
-# Getting Started
-**Clone the repository**
-🔹git clone https://github.com/code-with-mavia/textutils-pro.git
-🔹cd textutils-pro
+## 🔧 Features
 
-**Run the server**
-🔹python manage.py runserver
+- ✅ Remove Punctuation  
+- 🔠 Convert to Uppercase / Lowercase  
+- 🧹 Remove New Lines  
+- 🗑️ Remove Extra Spaces  
+- 🔢 Character Count  
+- 📌 Sentence Count  
 
-# Directory Structure 
-textutils
-    │   db.sqlite3
-    │   manage.py
-    │
-    ├───frontend
-    │       analyze.html
-    │       index.html
-    │
-    └───textutils
-        │   asgi.py
-        │   settings.py
-        │   urls.py
-        │   views.py
-        │   wsgi.py
-        │   __init__.py
-        │
-        └───__pycache__
-                settings.cpython-313.pyc
-                urls.cpython-313.pyc
-                views.cpython-313.pyc
-                wsgi.cpython-313.pyc
-                __init__.cpython-313.pyc
+---
+
+## 🛠 Tech Stack
+
+- **Python** 3.13  
+- **Django** 5.2  
+- **Bootstrap** 5  
+- **HTML/CSS**
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+```
+git clone https://github.com/code-with-mavia/textutils-pro.git
+cd textutils-pro
+```
+## 2. Run the development server
+```
+python manage.py runserver
+Then open your browser and navigate to:
+http://127.0.0.1:8000/
+```
+## 3. Directory Structure
+```
+textutils-pro/
+│
+├── db.sqlite3
+├── manage.py
+│
+├── frontend/
+│   ├── analyze.html
+│   └── index.html
+│
+└── textutils/
+    ├── __init__.py
+    ├── asgi.py
+    ├── settings.py
+    ├── urls.py
+    ├── views.py
+    ├── wsgi.py
+    └── __pycache__/
+        ├── __init__.cpython-313.pyc
+        ├── settings.cpython-313.pyc
+        ├── urls.cpython-313.pyc
+        ├── views.cpython-313.pyc
+        └── wsgi.cpython-313.pyc
+
+```
