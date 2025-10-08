@@ -4,6 +4,8 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'index.html')
 
+import re
+
 def analyze(request):
     djtext = request.POST.get('text', '')
     removepunc = request.POST.get('removepunc', 'off')
@@ -15,47 +17,49 @@ def analyze(request):
     sentencecount = request.POST.get('sentencecount', 'off')
 
     if not djtext.strip():
-        # No text entered
         return render(request, 'index.html', {'error': 'Please enter some text to analyze.'})
 
     analyzed_text = djtext
     purposes = {}
 
     if removepunc == "on":
-        punctuations = '''+!()-[]{};:'"\\,<>./?@#$%^&*_~'''
-        analyzed_text = "".join(char for char in analyzed_text if char not in punctuations)
-        purposes['removepunc'] = 'Removed Punctuations'
-
-    if fullcaps == "on":
-        analyzed_text = analyzed_text.upper()
-        purposes['fullcaps'] = 'Changed to Uppercase'
+        # Replace multiple punctuation with single one
+        analyzed_text = re.sub(r'([!?.])\1+', r'\1', analyzed_text)
+        purposes['removepunc'] = 'Cleaned Excess Punctuations'
 
     if newlineremover == "on":
-        analyzed_text = analyzed_text.replace('\n', '').replace('\r', '')
+        analyzed_text = analyzed_text.replace('\n', ' ').replace('\r', ' ')
         purposes['newlineremover'] = 'Removed New Lines'
 
     if extraspaceremover == "on":
         analyzed_text = " ".join(analyzed_text.split())
         purposes['extraspaceremover'] = 'Removed Extra Spaces'
 
+    if fullcaps == "on":
+        analyzed_text = analyzed_text.upper()
+        purposes['fullcaps'] = 'Changed to Uppercase'
+
     if lowercase == "on":
         analyzed_text = analyzed_text.lower()
         purposes['lowercase'] = 'Changed to Lowercase'
 
     if charcount == "on":
-        char_count = len(analyzed_text)
-        purposes['charcount'] = f'Character Count: {char_count}'
+        purposes['charcount'] = f'Character Count: {len(analyzed_text)}'
 
     if sentencecount == "on":
-        sentence_count = analyzed_text.count('.') + analyzed_text.count('!') + analyzed_text.count('?')
-        purposes['sentencecount'] = f'Sentence Count: {sentence_count}'
+        purposes['sentencecount'] = f'Sentence Count: {analyzed_text.count(".") + analyzed_text.count("!") + analyzed_text.count("?")}'
 
     if not purposes:
-        # No checkbox selected
         return render(request, 'index.html', {'error': 'Please select at least one operation to perform.'})
 
-    params = {
-        'purpose': purposes,  # dictionary now
-        'analyzed_text': analyzed_text,
-    }
-    return render(request, 'analyze.html', params)
+    return render(request, 'analyze.html', {'purpose': purposes, 'analyzed_text': analyzed_text})
+
+
+def features(request):
+    return render(request, 'features.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+def contact(request):
+    return render(request, 'contact.html')
