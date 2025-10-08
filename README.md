@@ -28,7 +28,7 @@
 
 ### 1. Clone the repository
 ```
-git clone https://github.com/code-with-mavia/textutils-pro.git
+git clone[ https://github.com/code-with-mavia/text.git](https://github.com/Code-With-Mavia/Text-Analyzer.git)
 cd textutils-pro
 ```
 ## 2. Run the development server
