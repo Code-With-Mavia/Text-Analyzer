@@ -39,27 +39,24 @@ http://127.0.0.1:8000/
 ```
 ## 3. Directory Structure
 ```
-textutils-pro/
-│
-├── db.sqlite3
-├── manage.py
-│
-├── frontend/
-│   ├── analyze.html
-│   └── index.html
-│
-└── textutils/
-    ├── __init__.py
-    ├── asgi.py
-    ├── settings.py
-    ├── urls.py
-    ├── views.py
-    ├── wsgi.py
-    └── __pycache__/
-        ├── __init__.cpython-313.pyc
-        ├── settings.cpython-313.pyc
-        ├── urls.cpython-313.pyc
-        ├── views.cpython-313.pyc
-        └── wsgi.cpython-313.pyc
-
-```
+Text-Analyzer/
+    text utils website/
+        textutils/
+            ── db.sqlite3
+            ├── frontend
+            │   ├── analyze.html
+            │   └── index.html
+            ├── manage.py
+            └── textutils
+                ├── __init__.py
+                ├── __pycache__
+                │   ├── __init__.cpython-313.pyc
+                │   ├── settings.cpython-313.pyc
+                │   ├── urls.cpython-313.pyc
+                │   ├── views.cpython-313.pyc
+                │   └── wsgi.cpython-313.pyc
+                ├── asgi.py
+                ├── settings.py
+                ├── urls.py
+                ├── views.py
+                └── wsgi.py
